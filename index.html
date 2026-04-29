@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>苏州福宝｜东山枇杷与碧螺春</title>
+  <meta name="description" content="苏州东山枇杷与洞庭碧螺春手机端产品介绍页。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --rice: #fbf5e7;
+      --paper: #fffdf6;
+      --mist: #e8efe2;
+      --ink: #17231c;
+      --muted: #5f695d;
+      --green: #0d5639;
+      --green-2: #607d43;
+      --leaf: #dbe9c9;
+      --gold: #d99627;
+      --honey: #ffe2a3;
+      --red: #ad1f24;
+      --line: rgba(52, 77, 48, .18);
+      --shadow: 0 18px 48px rgba(31, 43, 32, .12);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 18% 5%, rgba(255, 226, 163, .34), transparent 28rem),
+        linear-gradient(180deg, #f7f2e5 0%, var(--rice) 42%, #eef4e8 100%);
+      color: var(--ink);
+      font-family: "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .material-symbols-outlined {
+      width: 22px;
+      height: 22px;
+      display: inline-grid;
+      place-items: center;
+      overflow: hidden;
+      color: transparent;
+      font-size: 0;
+      line-height: 0;
+      flex: 0 0 auto;
+    }
+
+    .material-symbols-outlined::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-radius: 78% 0 78% 0;
+      background: currentColor;
+      color: var(--green);
+      transform: rotate(-42deg);
+      box-shadow: inset -3px -3px 0 rgba(255, 255, 255, .28);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 390px;
+      margin: 0 auto;
+      background:
+        linear-gradient(90deg, rgba(13, 86, 57, .035) 1px, transparent 1px) 0 0 / 34px 34px,
+        rgba(251, 245, 231, .76);
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(52, 77, 48, .08);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 56px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(251, 245, 231, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .seal {
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--red);
+      color: var(--red);
+      display: grid;
+      place-items: center;
+      font-family: "Noto Serif SC", serif;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .brand strong {
+      font-family: "Noto Serif SC", serif;
+      font-size: 17px;
+      letter-spacing: .08em;
+      color: var(--green);
+    }
+
+    .icon-button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(13, 86, 57, .2);
+      background: rgba(255, 253, 246, .62);
+      color: var(--green);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+    }
+
+    .hero {
+      min-height: calc(100svh - 56px);
+      padding: 38px 18px 104px;
+      display: grid;
+      align-content: space-between;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(251, 245, 231, .08) 0%, rgba(251, 245, 231, .6) 68%, var(--rice) 100%),
+        radial-gradient(ellipse at 18% 16%, rgba(96, 125, 67, .22), transparent 112px),
+        radial-gradient(ellipse at 86% 30%, rgba(217, 150, 39, .18), transparent 130px),
+        linear-gradient(156deg, transparent 0 52%, rgba(13, 86, 57, .1) 52% 62%, transparent 62%),
+        linear-gradient(24deg, transparent 0 57%, rgba(96, 125, 67, .12) 57% 67%, transparent 67%);
+      opacity: .9;
+      pointer-events: none;
+    }
+
+    .hero-content,
+    .hero-strip {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: .16em;
+      padding: 7px 10px;
+      border: 1px solid rgba(13, 86, 57, .18);
+      background: rgba(255, 253, 246, .68);
+      border-radius: 999px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 22px;
+      font-family: "Noto Serif SC", serif;
+      font-size: clamp(44px, 14vw, 66px);
+      line-height: 1.04;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .hero-lead {
+      margin-top: 18px;
+      color: #2f3f32;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 21em;
+    }
+
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 44px;
+    }
+
+    .quick-card {
+      min-width: 0;
+      min-height: 88px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 246, .74);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .quick-card .material-symbols-outlined {
+      width: 24px;
+      height: 24px;
+    }
+
+    .quick-card .material-symbols-outlined::before {
+      width: 17px;
+      height: 17px;
+    }
+
+    .quick-card b {
+      font-family: "Noto Serif SC", serif;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    section {
+      padding: 56px 18px;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      line-height: 1;
+    }
+
+    .section-kicker::before,
+    .section-kicker::after {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: rgba(13, 86, 57, .32);
+    }
+
+    h2 {
+      font-family: "Noto Serif SC", serif;
+      font-size: 34px;
+      line-height: 1.16;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .summary {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .poster {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(52, 77, 48, .12);
+    }
+
+    .poster img {
+      width: 100%;
+      aspect-ratio: 9 / 12.6;
+      object-fit: cover;
+      background: #edf2e4;
+    }
+
+    .poster-caption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: #fff8dc;
+      background: rgba(8, 67, 43, .86);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 238, 178, .36);
+      border-radius: 7px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .poster-caption b {
+      font-family: "Noto Serif SC", serif;
+      font-size: 17px;
+      white-space: nowrap;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .story-photo {
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(52, 77, 48, .12);
+      background: var(--paper);
+    }
+
+    .story-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #edf2e4;
+    }
+
+    .story-photo figcaption {
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      background: rgba(255, 253, 246, .76);
+    }
+
+    .traits {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin: 20px 0 0;
+    }
+
+    .trait {
+      min-height: 86px;
+      display: grid;
+      place-items: center;
+      gap: 6px;
+      padding: 10px 4px;
+      text-align: center;
+      color: var(--green);
+      border: 1px solid rgba(13, 86, 57, .2);
+      background: rgba(255, 253, 246, .64);
+      border-radius: 8px;
+    }
+
+    .trait small {
+      font-family: "Noto Serif SC", serif;
+      font-size: 15px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .detail-list {
+      margin: 24px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail:first-child {
+      border-top: 0;
+    }
+
+    .detail .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--leaf);
+      color: var(--green);
+    }
+
+    .detail b {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Noto Serif SC", serif;
+      font-size: 18px;
+      color: #263629;
+    }
+
+    .detail p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .loquat {
+      background:
+        radial-gradient(circle at 86% 6%, rgba(217, 150, 39, .2), transparent 12rem),
+        linear-gradient(180deg, rgba(255, 253, 246, .64), transparent);
+    }
+
+    .tea {
+      background:
+        radial-gradient(circle at 8% 10%, rgba(96, 125, 67, .18), transparent 13rem),
+        linear-gradient(180deg, rgba(232, 239, 226, .68), rgba(251, 245, 231, .35));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .season {
+      padding: 42px 18px 110px;
+    }
+
+    .season-panel {
+      border-radius: 8px;
+      padding: 22px 18px;
+      background: #173827;
+      color: #fff8e4;
+      display: grid;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .season-panel::after {
+      content: "福宝";
+      position: absolute;
+      right: -18px;
+      bottom: -28px;
+      color: rgba(255, 226, 163, .12);
+      font-family: "Noto Serif SC", serif;
+      font-size: 88px;
+      font-weight: 800;
+    }
+
+    .season-panel h2 {
+      color: #fff8e4;
+      font-size: 29px;
+    }
+
+    .season-panel p {
+      color: rgba(255, 248, 228, .76);
+      line-height: 1.8;
+      font-size: 15px;
+      max-width: 21em;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 44px;
+      gap: 10px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .primary-action {
+      min-height: 44px;
+      border: 0;
+      border-radius: 8px;
+      padding: 0 16px;
+      background: var(--honey);
+      color: #412809;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .share-action {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 226, 163, .36);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .08);
+      color: #fff8e4;
+      display: grid;
+      place-items: center;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      z-index: 30;
+      width: 100%;
+      max-width: 390px;
+      padding: 8px 10px calc(8px + var(--safe-bottom));
+      background: rgba(255, 253, 246, .92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .bottom-nav a {
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      gap: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+    }
+
+    .bottom-nav a:focus,
+    .bottom-nav a:hover {
+      color: var(--green);
+      border-color: rgba(13, 86, 57, .16);
+      background: rgba(232, 239, 226, .8);
+      outline: 0;
+    }
+
+    @media (min-width: 481px) {
+      body {
+        padding: 18px 0;
+      }
+
+      .page,
+      .bottom-nav {
+        border-radius: 18px;
+      }
+
+      .bottom-nav {
+        bottom: 18px;
+        box-shadow: var(--shadow);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="seal" aria-hidden="true">福宝</span>
+        <strong>苏州东山农产</strong>
+      </a>
+      <a class="icon-button" href="#contact" aria-label="咨询产品">
+        <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <span class="eyebrow"><span class="material-symbols-outlined" aria-hidden="true">eco</span>苏州福宝精选</span>
+          <h1 id="hero-title">东山风物<br>一果一茶</h1>
+          <p class="hero-lead">临太湖而生，依山水成味。用一颗初夏枇杷与一杯春日碧螺春，介绍苏州东山的清甜与清香。</p>
+        </div>
+        <div class="hero-strip" aria-label="产品入口">
+          <a class="quick-card" href="#loquat">
+            <span class="material-symbols-outlined" aria-hidden="true">nutrition</span>
+            <b>东山枇杷</b>
+          </a>
+          <a class="quick-card" href="#tea">
+            <span class="material-symbols-outlined" aria-hidden="true">local_cafe</span>
+            <b>碧螺春</b>
+          </a>
+        </div>
+      </section>
+
+      <section class="loquat" id="loquat" aria-labelledby="loquat-title">
+        <div class="section-head">
+          <span class="section-kicker">江南佳果</span>
+          <h2 id="loquat-title">苏州东山枇杷</h2>
+          <p class="summary">东山枇杷色泽金黄，果肉细嫩多汁，酸甜适口。初夏成熟时，果香清雅，入口甘润鲜爽。</p>
+        </div>
+
+        <figure class="poster">
+          <img src="./assets/loquat-poster.jpg" alt="苏州东山枇杷产品海报">
+          <figcaption class="poster-caption">
+            <span>日照充足，临湖鲜甜</span>
+            <b>一口初夏甜</b>
+          </figcaption>
+        </figure>
+
+        <div class="photo-grid" aria-label="枇杷实拍图">
+          <figure class="story-photo">
+            <img src="./assets/loquat-harvest.jpg" alt="竹篓里装满刚采摘的东山枇杷">
+            <figcaption>采摘篮里的东山枇杷，保留果园现场的自然鲜活感。</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="./assets/loquat-close.jpg" alt="剥开的东山枇杷果肉和树上果实">
+            <figcaption>剥开后果肉细嫩、汁水明显，适合强调口感卖点。</figcaption>
+          </figure>
+        </div>
+
+        <div class="traits" aria-label="枇杷特点">
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">landscape</span><small>东山<br>原产</small></div>
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">spa</span><small>果肉<br>细嫩</small></div>
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">water_drop</span><small>汁多<br>味甜</small></div>
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">yard</span><small>新鲜<br>采摘</small></div>
+        </div>
+
+        <div class="detail-list">
+          <article class="detail">
+            <span class="mark"><span class="material-symbols-outlined" aria-hidden="true">wb_sunny</span></span>
+            <div>
+              <b>太湖水汽与山地日照</b>
+              <p>临湖果园昼夜温差温和，果实成熟更均匀，甜度、香气和水分都有稳定表现。</p>
+            </div>
+          </article>
+          <article class="detail">
+            <span class="mark"><span class="material-symbols-outlined" aria-hidden="true">inventory_2</span></span>
+            <div>
+              <b>适合鲜食与礼赠</b>
+              <p>页面可用于当季预售、社区团购或礼盒介绍，重点突出产地、口感和采摘新鲜度。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="tea" id="tea" aria-labelledby="tea-title">
+        <div class="section-head">
+          <span class="section-kicker">江南名茶</span>
+          <h2 id="tea-title">洞庭碧螺春</h2>
+          <p class="summary">东山碧螺春芽叶细嫩，卷曲如螺，银绿隐翠。冲泡后汤色清澈明亮，花果香幽雅，滋味鲜醇回甘。</p>
+        </div>
+
+        <figure class="poster">
+          <img src="./assets/biluochun-poster.jpg" alt="苏州东山碧螺春产品海报">
+          <figcaption class="poster-caption">
+            <span>明前采摘，嫩芽精制</span>
+            <b>一杯春意浓</b>
+          </figcaption>
+        </figure>
+
+        <div class="photo-grid" aria-label="碧螺春实拍图">
+          <figure class="story-photo">
+            <img src="./assets/tea-brew.jpg" alt="玻璃杯中冲泡展开的碧螺春芽叶">
+            <figcaption>玻璃杯茶汤清透，展示芽尖舒展后的干净舒适感。</figcaption>
+          </figure>
+          <figure class="story-photo">
+            <img src="./assets/tea-drying.jpg" alt="多层竹匾中摊放的碧螺春茶叶">
+            <figcaption>制茶竹匾呈现工艺现场，补充明前嫩芽精制的可信度。</figcaption>
+          </figure>
+        </div>
+
+        <div class="traits" aria-label="碧螺春特点">
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">eco</span><small>明前<br>采摘</small></div>
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">grass</span><small>嫩芽<br>精制</small></div>
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">local_florist</span><small>花果<br>香郁</small></div>
+          <div class="trait"><span class="material-symbols-outlined" aria-hidden="true">water_drop</span><small>鲜爽<br>回甘</small></div>
+        </div>
+
+        <div class="detail-list">
+          <article class="detail">
+            <span class="mark"><span class="material-symbols-outlined" aria-hidden="true">forest</span></span>
+            <div>
+              <b>茶果间作的东山风味</b>
+              <p>茶树与果木相伴，形成碧螺春常被称道的清幽花果香，适合做高端春茶介绍。</p>
+            </div>
+          </article>
+          <article class="detail">
+            <span class="mark"><span class="material-symbols-outlined" aria-hidden="true">local_drink</span></span>
+            <div>
+              <b>清汤绿叶，鲜醇回甘</b>
+              <p>适合用玻璃杯展示芽叶舒展，页面中可搭配规格、等级、采摘时间继续扩展。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="season" id="contact" aria-labelledby="contact-title">
+        <div class="season-panel">
+          <span class="eyebrow"><span class="material-symbols-outlined" aria-hidden="true">verified</span>苏州福宝农产品</span>
+          <h2 id="contact-title">把东山时令装进手机页</h2>
+          <p>枇杷主打“初夏鲜甜”，碧螺春主打“春日清香”。页面已按手机浏览节奏组织，可继续接入价格、规格、联系方式或下单链接。</p>
+          <div class="actions">
+            <a class="primary-action" href="tel:13800000000">电话咨询</a>
+            <a class="share-action" href="#top" aria-label="返回顶部"><span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="bottom-nav" aria-label="页面导航">
+    <a href="#top"><span class="material-symbols-outlined" aria-hidden="true">home</span>首页</a>
+    <a href="#loquat"><span class="material-symbols-outlined" aria-hidden="true">nutrition</span>枇杷</a>
+    <a href="#tea"><span class="material-symbols-outlined" aria-hidden="true">local_cafe</span>碧螺春</a>
+  </nav>
+</body>
+</html>
